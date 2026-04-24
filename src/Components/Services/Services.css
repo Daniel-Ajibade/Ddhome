@@ -1,0 +1,156 @@
+/* ============================================================
+   Services.css — Services Grid Section
+   Double D Home Health Care
+   ============================================================ */
+
+/* --- Section Wrapper --- */
+.services {
+  padding: var(--space-4xl) 0;
+  background-color: var(--color-bg);
+}
+
+/* --- Section Header --- */
+.services__header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.services__header .section-subtitle {
+  margin: var(--space-md) auto 0;
+  text-align: center;
+}
+
+/* --- Services Grid --- */
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-xl);
+}
+
+/* --- Individual Service Card --- */
+.service-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-base),
+              box-shadow var(--transition-base),
+              border-color var(--transition-base);
+
+  /* Subtle bottom accent bar */
+  border-bottom: 3px solid transparent;
+}
+
+/* Hover lift effect */
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-bottom-color: var(--color-primary);
+}
+
+/* Decorative background circle */
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: var(--color-primary-light);
+  opacity: 0.5;
+  transition: opacity var(--transition-base),
+              transform var(--transition-base);
+}
+
+.service-card:hover::before {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* --- Card Icon --- */
+.service-card__icon-wrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-md);
+  background: var(--color-primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  margin-bottom: var(--space-lg);
+  transition: background-color var(--transition-base),
+              transform var(--transition-base);
+  position: relative;
+  z-index: 1;
+}
+
+.service-card:hover .service-card__icon-wrapper {
+  background-color: var(--color-primary);
+  transform: scale(1.05);
+}
+
+/* --- Card Title --- */
+.service-card__title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Card Description --- */
+.service-card__description {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  margin-bottom: var(--space-lg);
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Feature List inside card --- */
+.service-card__features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  position: relative;
+  z-index: 1;
+}
+
+.service-card__feature {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.service-card__feature-dot {
+  width: 6px;
+  height: 6px;
+  min-width: 6px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    padding: var(--space-xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .services {
+    padding: var(--space-3xl) 0;
+  }
+}

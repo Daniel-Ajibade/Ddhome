@@ -1,0 +1,46 @@
+/* ============================================================
+   App.css — App Shell & Page-Level Layout
+   Double D Home Health Care
+   ============================================================ */
+
+/* --- App Root Wrapper --- */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+}
+
+/* --- Main Content Area --- */
+/* Offset for the sticky navbar height */
+.app__main {
+  flex: 1;
+  padding-top: var(--navbar-height);
+}
+
+/* --- Page-Level Section Spacing --- */
+/* Each section gets consistent top/bottom padding */
+.app__main section {
+  scroll-margin-top: var(--navbar-height);
+}
+
+/* --- Footer --- */
+.app__footer {
+  background-color: var(--color-text);
+  color: var(--color-white);
+  text-align: center;
+  padding: var(--space-xl) var(--space-lg);
+  font-size: 0.875rem;
+  font-family: var(--font-body);
+}
+
+.app__footer span {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.app__footer p {
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: var(--space-xs);
+  font-size: 0.8rem;
+}

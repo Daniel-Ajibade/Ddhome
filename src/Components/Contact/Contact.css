@@ -1,0 +1,210 @@
+/* ============================================================
+   Contact.css — Contact Section
+   Double D Home Health Care
+   ============================================================ */
+
+/* --- Section Wrapper --- */
+.contact {
+  padding: var(--space-4xl) 0;
+  background-color: var(--color-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative circle bottom-right */
+.contact::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: var(--color-primary-light);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* --- Section Header --- */
+.contact__header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.contact__header .section-subtitle {
+  margin: var(--space-md) auto 0;
+  text-align: center;
+}
+
+/* --- Contact Cards Grid --- */
+.contact__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+  margin-bottom: var(--space-3xl);
+  position: relative;
+  z-index: 1;
+}
+
+/* Individual contact card */
+.contact-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl) var(--space-xl);
+  text-align: center;
+  transition: transform var(--transition-base),
+              box-shadow var(--transition-base);
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Icon circle */
+.contact-card__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--color-primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin: 0 auto var(--space-lg);
+  transition: background-color var(--transition-base),
+              transform var(--transition-base);
+}
+
+.contact-card:hover .contact-card__icon {
+  background-color: var(--color-primary);
+  transform: scale(1.08);
+}
+
+.contact-card__label {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-sm);
+}
+
+.contact-card__value {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.4;
+}
+
+.contact-card__sub {
+  font-size: 0.825rem;
+  color: var(--color-text-muted);
+  margin-top: var(--space-xs);
+  line-height: 1.5;
+}
+
+/* --- CTA Banner at bottom of contact --- */
+.contact__cta-banner {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    #0f9090 100%
+  );
+  border-radius: var(--radius-xl);
+  padding: var(--space-3xl) var(--space-2xl);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xl);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Decorative glow inside banner */
+.contact__cta-banner::before {
+  content: '';
+  position: absolute;
+  right: -60px;
+  top: -60px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+}
+
+.contact__cta-text h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: var(--space-sm);
+}
+
+.contact__cta-text p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  max-width: 400px;
+}
+
+/* CTA action button */
+.contact__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background-color: var(--color-accent);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: var(--space-md) var(--space-2xl);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  border: none;
+  white-space: nowrap;
+  transition: background-color var(--transition-base),
+              transform var(--transition-fast),
+              box-shadow var(--transition-base);
+  flex-shrink: 0;
+}
+
+.contact__cta-btn:hover {
+  background-color: #b8952e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201, 168, 76, 0.4);
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .contact__cards {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact__cta-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact__cta-text p {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    padding: var(--space-3xl) 0;
+  }
+
+  .contact__cta-banner {
+    padding: var(--space-2xl) var(--space-lg);
+  }
+}
